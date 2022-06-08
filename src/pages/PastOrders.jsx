@@ -1,34 +1,28 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import OrderDisplay from "../components/OrderDisplay";
+import EditOrder from "../components/EditOrder";
 
 export default function PastOrders({ orders, deleteOrder, getOrders }) {
-  const navigate = useNavigate();
-
-  function handleDelete(id) {
-    deleteOrder(id);
-    navigate("/pastorders");
-  }
-
-  function handleEdit() {}
-
+  const [edit, setEdit] = useState(false);
   const allOrders = orders.map((o, idx) => {
-    return (
-      <div key={idx}>
-        <h3>Order #{idx}</h3>
-        <h4>User {o.user}</h4>
-        <div>{o.items}</div>
-        <div>Total: {o.total}</div>
-        <button onClick={handleEdit}>Edit</button>
-        <button onClick={() => handleDelete(o._id)}>DELETE</button>
-      </div>
-    );
+    if (edit) {
+      return <EditOrder o={o} idx={idx} setEdit={setEdit} key={idx} />;
+    } else {
+      return (
+        <OrderDisplay
+          o={o}
+          idx={idx}
+          deleteOrder={deleteOrder}
+          setEdit={setEdit}
+          key={idx}
+        />
+      );
+    }
   });
 
   useEffect(() => {
     getOrders();
   }, []);
-
-  const [display, setDisplay] = useState(allOrders);
 
   return (
     <main className="orders">
