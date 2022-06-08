@@ -20,20 +20,25 @@ export default function EditOrder({ o, idx, setEdit, updateOrder, getOrders }) {
 
   return (
     <div>
+      <h3>Order #{idx}</h3>
       <form onSubmit={handleSubmit}>
+        User:
         <input
           type="text"
           name="user"
           value={editForm.user}
           onChange={handleChange}
-          placeholder="user"
+        />
+        Total:
+        <input
+          type="text"
+          name="total"
+          value={editForm.total}
+          onChange={handleChange}
         />
         <button type="submit">Submit</button>
       </form>
-      <h3>Order #{idx}</h3>
-      <h4>User {o.user}</h4>
       <div>{o.items}</div>
-      <div>Total: {o.total}</div>
     </div>
   );
 }
