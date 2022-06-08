@@ -68,7 +68,12 @@ export default function Main() {
   return (
     <main>
       <Routes>
-        <Route path="/" element={<Home setCurrentOrder={setCurrentOrder} />} />
+        <Route
+          path="/"
+          element={
+            <Home setCurrentOrder={setCurrentOrder} setTotalDue={setTotalDue} />
+          }
+        />
         <Route path="/menu" element={<Menu />} />
         <Route
           path="/menu/:id"
@@ -77,6 +82,7 @@ export default function Main() {
               menu={menu}
               currentOrder={currentOrder}
               totalDue={totalDue}
+              setTotalDue={setTotalDue}
             />
           }
         />

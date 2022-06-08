@@ -1,15 +1,15 @@
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
-export default function SubMenu({ menu, currentOrder, totalDue }) {
+export default function SubMenu({ menu, currentOrder, totalDue, setTotalDue }) {
   const { id } = useParams();
   const items = menu.filter((i) => i.group === id);
 
   function addToOrder(item) {
-    console.log("clicked add to order");
+    let total = 0;
     currentOrder.push(item);
-    console.log(currentOrder);
-    totalDue += item.price;
+    currentOrder.forEach((e) => (total += e.price));
+    setTotalDue(total.toFixed(2));
   }
 
   return (

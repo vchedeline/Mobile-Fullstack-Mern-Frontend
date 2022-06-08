@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-export default function Home({ setCurrentOrder }) {
+export default function Home({ setCurrentOrder, setTotalDue }) {
   function handleClick() {
     setCurrentOrder([]);
+    setTotalDue(0);
   }
 
   return (
     <main className="home">
-      <h1>Home Page</h1>
       <div>
         <button>
           <Link to={"/menu"}>FULL MENU</Link>
