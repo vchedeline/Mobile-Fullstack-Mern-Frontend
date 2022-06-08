@@ -99,6 +99,7 @@ export default function Main() {
               orders={orders}
               deleteOrder={deleteOrder}
               getOrders={getOrders}
+              updateOrder={updateOrder}
             />
           }
         />

@@ -2,11 +2,25 @@ import { useEffect, useState } from "react";
 import OrderDisplay from "../components/OrderDisplay";
 import EditOrder from "../components/EditOrder";
 
-export default function PastOrders({ orders, deleteOrder, getOrders }) {
+export default function PastOrders({
+  orders,
+  deleteOrder,
+  getOrders,
+  updateOrder,
+}) {
   const [edit, setEdit] = useState(false);
   const allOrders = orders.map((o, idx) => {
-    if (edit) {
-      return <EditOrder o={o} idx={idx} setEdit={setEdit} key={idx} />;
+    if (edit === idx) {
+      return (
+        <EditOrder
+          o={o}
+          idx={idx}
+          updateOrder={updateOrder}
+          setEdit={setEdit}
+          getOrders={getOrders}
+          key={idx}
+        />
+      );
     } else {
       return (
         <OrderDisplay

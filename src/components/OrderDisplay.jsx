@@ -10,7 +10,7 @@ export default function OrderDisplay({ o, idx, deleteOrder, setEdit }) {
   }
 
   function handleEdit() {
-    setEdit(true);
+    setEdit(idx);
   }
 
   return (
