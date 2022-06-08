@@ -13,5 +13,5 @@
 - MongoDB, mongoose
 - Heroku
 
-[mywebsite]: cv-sei-mobile-fullstack-mern.netlify.app
+[mywebsite]: https://cv-sei-mobile-fullstack-mern.netlify.app
 [backend]: https://github.com/vchedeline/Mobile-Fullstack-Mern-Backend
