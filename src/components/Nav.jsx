@@ -10,7 +10,7 @@ export default function Nav() {
         <Link to={"/"}>NEW ORDER</Link>
       </div>
       <div>
-        <Link to={"/orders/:id"}>CHECKOUT</Link>
+        <Link to={"/pastorders"}>ALL ORDERS</Link>
       </div>
       <div>
         <Link to={"/"}>LOGOUT</Link>
