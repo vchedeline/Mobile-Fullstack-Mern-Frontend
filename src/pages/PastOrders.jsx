@@ -11,9 +11,9 @@ export default function PastOrders({ orders }) {
   });
 
   return (
-    <main>
+    <div className="orders">
       <h1>All Orders</h1>
       {allOrders}
-    </main>
+    </div>
   );
 }

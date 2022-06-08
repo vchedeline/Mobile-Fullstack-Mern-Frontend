@@ -1,7 +1,7 @@
 export default function Order({ orders }) {
   return (
-    <main>
-      <h1>Order</h1>
-    </main>
+    <div className="orders">
+      <h1>All Orders</h1>
+    </div>
   );
 }
