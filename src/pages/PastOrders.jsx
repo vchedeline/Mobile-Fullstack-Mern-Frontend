@@ -1,4 +1,16 @@
-export default function PastOrders({ orders }) {
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+
+export default function PastOrders({ orders, deleteOrder, getOrders }) {
+  const navigate = useNavigate();
+
+  function handleDelete(id) {
+    deleteOrder(id);
+    navigate("/pastorders");
+  }
+
+  function handleEdit() {}
+
   const allOrders = orders.map((o, idx) => {
     return (
       <div key={idx}>
@@ -6,14 +18,22 @@ export default function PastOrders({ orders }) {
         <h4>User {o.user}</h4>
         <div>{o.items}</div>
         <div>Total: {o.total}</div>
+        <button onClick={handleEdit}>Edit</button>
+        <button onClick={() => handleDelete(o._id)}>DELETE</button>
       </div>
     );
   });
 
+  useEffect(() => {
+    getOrders();
+  }, []);
+
+  const [display, setDisplay] = useState(allOrders);
+
   return (
-    <div className="orders">
+    <main className="orders">
       <h1>All Orders</h1>
-      {allOrders}
-    </div>
+      {orders ? allOrders : <h1>Loading...</h1>}
+    </main>
   );
 }

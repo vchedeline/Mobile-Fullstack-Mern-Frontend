@@ -7,13 +7,13 @@ export default function Nav() {
         <Link to={"/"}>HOME</Link>
       </div>
       <div>
-        <Link to={"/"}>NEW ORDER</Link>
+        <Link to={"/checkout"}>CART</Link>
       </div>
       <div>
         <Link to={"/pastorders"}>ALL ORDERS</Link>
       </div>
       <div>
-        <Link to={"/"}>LOGOUT</Link>
+        <Link to={"/login"}>LOGOUT</Link>
       </div>
     </>
   );

@@ -8,14 +8,44 @@ body {
   align-items: center;
 }
 
-.orders {
-  height: 100vh;
-}
-
 .App {
   text-align: center;
   border: 2px solid black;
   width: 80vw;
+}
+
+.login {
+  height: 100vh;
+}
+
+.login div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  margin: 1em;
+  height: 70vh;
+}
+
+.login div input {
+  margin: 0.5em;
+}
+
+.home {
+  height: 100vh;
+}
+
+.home div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.home div button {
+  margin: 2em;
 }
 
 .food-group {
@@ -27,7 +57,33 @@ body {
   align-items: center;
 }
 
+#sub-menu {
+  height: 100vh;
+}
+
+.food-items {
+  margin: 1em;
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout {
+  height: 100vh;
+}
+
+.orders div {
+  margin: 1em;
+}
+
 footer {
   background-color: black;
   color: white;
+}
+
+a {
+  text-decoration: none;
+  color: brown;
 }

@@ -1,18 +1,29 @@
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
-export default function SubMenu({ menu }) {
+export default function SubMenu({ menu, currentOrder, totalDue }) {
   const { id } = useParams();
   const items = menu.filter((i) => i.group === id);
-  console.log(items);
+
+  function addToOrder(item) {
+    console.log("clicked add to order");
+    currentOrder.push(item);
+    console.log(currentOrder);
+    totalDue += item.price;
+  }
 
   return (
-    <main>
+    <main id="sub-menu">
       <h1>{id}</h1>
+      <button>
+        <Link to={"/menu"}>BACK TO MENU</Link>
+      </button>
       {items.map((ele, idx) => {
         return (
-          <div key={idx}>
-            <h2>{ele.name}</h2>
-            <h3>{ele.price}</h3>
+          <div key={idx} className="food-items">
+            <p>{ele.name}</p>
+            <p>{ele.price}</p>
+            <button onClick={() => addToOrder(ele)}>Add To Order</button>
           </div>
         );
       })}
