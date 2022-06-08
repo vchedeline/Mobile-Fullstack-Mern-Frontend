@@ -13,20 +13,24 @@ export default function SubMenu({ menu, currentOrder, totalDue }) {
   }
 
   return (
-    <main id="sub-menu">
-      <h1>{id}</h1>
-      <button>
-        <Link to={"/menu"}>BACK TO MENU</Link>
-      </button>
-      {items.map((ele, idx) => {
-        return (
-          <div key={idx} className="food-items">
-            <p>{ele.name}</p>
-            <p>{ele.price}</p>
-            <button onClick={() => addToOrder(ele)}>Add To Order</button>
-          </div>
-        );
-      })}
+    <main className="submenu">
+      <div>
+        <h1>{id}</h1>
+        <button>
+          <Link to={"/menu"}>BACK TO MENU</Link>
+        </button>
+      </div>
+      <div id="items">
+        {items.map((ele, idx) => {
+          return (
+            <div key={idx} className="food-item">
+              <h2>{ele.name}</h2>
+              <h2>${ele.price}</h2>
+              <button onClick={() => addToOrder(ele)}>Add To Order</button>
+            </div>
+          );
+        })}
+      </div>
     </main>
   );
 }

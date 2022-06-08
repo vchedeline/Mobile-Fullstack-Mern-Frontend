@@ -27,9 +27,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 3em;
   margin: 1em;
-  height: 70vh;
 }
 
 .login div input {
@@ -55,23 +53,41 @@ header {
 .food-group {
   height: 200px;
   margin: 1em;
-  font-size: 4em;
+  font-size: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
+  border: 2px teal solid;
+  padding: 2em;
 }
 
-#sub-menu {
+.food-group a {
+  color: black;
+  text-shadow: 2px 2px teal;
+}
+
+.submenu {
   height: 100vh;
 }
 
-.food-items {
+#items {
   margin: 1em;
-  font-size: 3em;
+}
+
+.food-item {
+  font-size: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px dotted teal;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+.food-item button {
+  margin-bottom: 2em;
 }
 
 .checkout {

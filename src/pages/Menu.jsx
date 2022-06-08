@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 export default function Menu() {
   return (
     <main>
-      <h1>Chedou's Fast Foods</h1>
       <div className="food-group">
         <Link to={"/menu/Breakfast"}>Breakfast Items</Link>
       </div>
