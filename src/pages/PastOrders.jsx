@@ -36,7 +36,7 @@ export default function PastOrders({
 
   useEffect(() => {
     getOrders();
-  });
+  }, []);
 
   return (
     <main className="orders">

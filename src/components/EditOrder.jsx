@@ -20,23 +20,30 @@ export default function EditOrder({ o, idx, setEdit, updateOrder, getOrders }) {
     <div>
       <h3>Order #{idx}</h3>
       <form onSubmit={handleSubmit}>
-        User:
+        <p>User:</p>
         <input
           type="text"
           name="user"
           value={editForm.user}
           onChange={handleChange}
         />
-        Total:
+        <p>Total:</p>
         <input
           type="text"
           name="total"
           value={editForm.total}
           onChange={handleChange}
         />
+        <div>
+          <p>Food Items:</p>
+          <ul>
+            {o.items.map((e, idx) => (
+              <input type="text" name={e} value={e} onChange={handleChange} />
+            ))}
+          </ul>
+        </div>
         <button type="submit">Submit</button>
       </form>
-      <div>{o.items}</div>
     </div>
   );
 }

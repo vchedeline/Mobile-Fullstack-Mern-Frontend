@@ -13,12 +13,18 @@ export default function OrderDisplay({ o, idx, deleteOrder, setEdit }) {
   }
 
   return (
-    <div key={idx}>
+    <div key={idx} className="receipt">
       <h3>Order #{idx}</h3>
       <h4>User {o.user}</h4>
-      <div>{o.items}</div>
+      <div>
+        <ul>
+          {o.items.map((e) => (
+            <li>{e}</li>
+          ))}
+        </ul>
+      </div>
       <div>Total: {o.total}</div>
-      <button onClick={handleEdit}>Edit</button>
+      <button onClick={handleEdit}>EDIT</button>
       <button onClick={() => handleDelete(o._id)}>DELETE</button>
     </div>
   );

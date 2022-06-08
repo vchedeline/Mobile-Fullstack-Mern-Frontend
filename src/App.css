@@ -94,12 +94,14 @@ header {
   height: 100vh;
 }
 
-.orders {
-  height: 100vh;
+.receipt {
+  border: 2px solid black;
+  border-bottom: dotted;
+  margin: 1em;
 }
 
-.orders div {
-  margin: 1em;
+.receipt ul {
+  text-align: justify;
 }
 
 footer,
