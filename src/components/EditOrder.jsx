@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
 
 export default function EditOrder({ o, idx, setEdit, updateOrder, getOrders }) {
   const [editForm, setEditForm] = useState(o);
-  const navigate = useNavigate();
 
   function handleChange(evt) {
     setEditForm((prev) => ({

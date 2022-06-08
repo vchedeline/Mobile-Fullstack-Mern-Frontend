@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router";
-import EditOrder from "./EditOrder";
 
 export default function OrderDisplay({ o, idx, deleteOrder, setEdit }) {
   const navigate = useNavigate();
