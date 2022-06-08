@@ -1,8 +1,9 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 export default function SubMenu({ menu, currentOrder, totalDue, setTotalDue }) {
   const { id } = useParams();
+  const navigate = useNavigate();
   const items = menu.filter((i) => i.group === id);
 
   function addToOrder(item) {
@@ -10,6 +11,7 @@ export default function SubMenu({ menu, currentOrder, totalDue, setTotalDue }) {
     currentOrder.push(item);
     currentOrder.forEach((e) => (total += e.price));
     setTotalDue(total.toFixed(2));
+    navigate("/checkout");
   }
 
   return (

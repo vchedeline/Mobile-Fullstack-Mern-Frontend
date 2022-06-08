@@ -27,9 +27,13 @@ export default function Order({
   }
 
   function removeItem(idx) {
-    console.log("Removing at index" + idx);
-    console.log("Current Order Before" + currentOrder);
-    console.log("Current Order After" + currentOrder);
+    let tempOrder = currentOrder;
+    let total = 0;
+    tempOrder.splice(idx, 1);
+    tempOrder.forEach((e) => (total += e.price));
+    setCurrentOrder(tempOrder);
+    setTotalDue(total.toFixed(2));
+    navigate("/checkout");
   }
 
   function displayList() {
@@ -37,7 +41,7 @@ export default function Order({
       return (
         <div key={idx}>
           <h1>{ele.name}</h1>
-          <p>Total: {ele.price}</p>
+          <h2>Total: {ele.price}</h2>
           <button onClick={() => removeItem(idx)}>REMOVE</button>
         </div>
       );
