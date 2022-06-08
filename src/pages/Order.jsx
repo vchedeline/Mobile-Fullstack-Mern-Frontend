@@ -1,3 +1,7 @@
 export default function Order() {
-  return <h1>Order Page</h1>;
+  return (
+    <main>
+      <h1>Order</h1>
+    </main>
+  );
 }
